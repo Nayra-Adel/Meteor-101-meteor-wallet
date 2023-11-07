@@ -25,3 +25,25 @@
     meteor remove standard-minifier-css
     meteor add juliancwirko:postcss
     ```
+---
+## Disable Quick Prototyping
+
+### Removing the insecure package
+
+- Every newly created Meteor project has the ```insecure package``` installed by default.
+- This package allows us to edit the database from the client, which is useful for quick prototyping.
+- We need to remove it, because as the name suggests it is ```insecure```.
+  ```
+  meteor remove insecure
+  ```
+- Now our app changes don’t work anymore as we have revoked all client-side database permissions. If we try to insert a new contact for example, we are going to see ${{\color{red}insert \ failed: Access \ denied }}$ in our browser console.
+
+### Removing the autopublish package
+
+- Just like with ```insecure package```, all new Meteor apps start with the ```autopublish package```, which automatically synchronizes all the database contents to the client. So we should remove it:
+  ```
+  meteor remove autopublish
+  ```
+- When the app refreshes, the contacts list will be empty. Without the ```autopublish package```, we will have to specify explicitly what the server sends to the client.
+- The functions in Meteor that do this are ```Meteor.publish``` and ```Meteor.subscribe```.
+---
