@@ -17,3 +17,11 @@
       meteor update --release METEOR@2.3.7
       ```
 4. Styled with Tailwind CSS
+    ```
+    meteor npm install tailwindcss@2.2.19 postcss@8.3.1 postcss-load-config@3.1.0 autoprefixer@10.4.0
+    ```
+  - Set up the right Meteor package for PostCSS running the commands below:
+    ```
+    meteor remove standard-minifier-css
+    meteor add juliancwirko:postcss
+    ```
