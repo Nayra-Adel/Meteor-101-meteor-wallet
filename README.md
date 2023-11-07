@@ -1,1 +1,1 @@
-# Meteor-101-Starting-with-MeteorJS
+# Meteor-101-meteor-wallet
