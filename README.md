@@ -6,7 +6,11 @@
 
     - You will get an error when you deploy in galaxy
       
-      ${{\color{red}ERROR: DEPLOYING \ THE \ APP \ - \ error \ preparing \ repository: \ In \ order to use \ push \ to \ deploy \ your \ Meteor \ version \ needs to \ be \ at \ least \ v2.3.7, please \ upgrade \ your \ app.}}$
+      ${{\color{red}ERROR: DEPLOYING \ THE \ APP}}$
+      ${{\color{red}- \ error \ preparing \ repository:}}$
+      ${{\color{red}In \ order \ to \ use \ push \ to \ deploy}}$
+      ${{\color{red}your \ Meteor \ version \ needs \ to \ be}}$
+      ${{\color{red}at \ least \ v2.3.7, please \ upgrade \ your \ app.}}$
 
     - Update Meteor
       ```
