@@ -16,3 +16,4 @@
       ```
       meteor update --release METEOR@2.3.7
       ```
+4. Styled with Tailwind CSS
