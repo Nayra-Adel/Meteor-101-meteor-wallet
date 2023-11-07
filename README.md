@@ -25,6 +25,16 @@
     meteor remove standard-minifier-css
     meteor add juliancwirko:postcss
     ```
+5. Remove insecure package
+6. Remove autopublish package
+7. Use Meteor's Methods (Remote Procedure Call) API
+      
+    **Remember to install**
+      ```
+      meteor npm install @heroicons/react
+      ```
+1. Use Publications and Subscriptions
+2.  Use useFind and useSubscribe hooks
 ---
 ## Disable Quick Prototyping
 
@@ -46,4 +56,26 @@
   ```
 - When the app refreshes, the contacts list will be empty. Without the ```autopublish package```, we will have to specify explicitly what the server sends to the client.
 - The functions in Meteor that do this are ```Meteor.publish``` and ```Meteor.subscribe```.
+---
+## Meteor's Methods (Remote Procedure Call) API
+    
+  **What is a Method?**
+  - Methods are Meteor’s remote procedure call (RPC) system, used to save user input events and data that come from the client.
+  - If you’re familiar with REST APIs or HTTP, you can think of them like POST requests to your server, but with many nice features optimized for building a modern web application.
+  - At its core, a Method is an API endpoint for your server.
+  - you can define a Method on the server and its counterpart on the client, then call it with some data, write to the database, and get the return value in a callback.
+  - Meteor Methods are also tightly integrated with the pub/sub and data loading systems of Meteor to allow for Optimistic UI—the ability to simulate server-side actions on the client to make your app feel faster than it actually is.
+  - Reference: [Meteor Methods](https://guide.meteor.com/methods.html)
+---
+## Publications and Data Loading
+
+In a traditional, HTTP-based web application, the client and server communicate in a “request-response” fashion. Typically the client makes RESTful HTTP requests to the server and receives HTML or JSON data in response, and there’s no way for the server to “push” data to the client when changes happen at the backend.
+
+Meteor is built from the ground up on the Distributed Data Protocol (DDP) to allow data transfer in both directions. Building a Meteor app doesn’t require you to set up REST endpoints to serialize and send data. Instead you create publication endpoints that can push data from server to client.
+
+In Meteor a publication is a named API on the server that constructs a set of data to send to a client. A client initiates a subscription which connects to a publication, and receives that data. That data consists of a first batch sent when the subscription is initialized and then incremental updates as the published data changes.
+
+So a subscription can be thought of as a set of data that changes over time. Typically, the result of this is that a subscription “bridges” a server-side MongoDB collection, and the client side Minimongo cache of that collection. You can think of a subscription as a pipe that connects a subset of the “real” collection with the client’s version, and constantly keeps it up to date with the latest information on the server.
+
+Reference: [Data Loading](https://guide.meteor.com/data-loading.html)
 ---
