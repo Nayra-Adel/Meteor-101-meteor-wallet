@@ -33,8 +33,8 @@
       ```
       meteor npm install @heroicons/react
       ```
-1. Use Publications and Subscriptions
-2.  Use useFind and useSubscribe hooks
+8. Use Publications and Subscriptions
+9.  Use useFind and useSubscribe hooks
 ---
 ## Disable Quick Prototyping
 
