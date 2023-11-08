@@ -12,6 +12,10 @@ Meteor.methods({
     }
     return ContactsCollection.insert({ name, email, imageUrl, createdAt: new Date() });
   },
+  'contacts.archive'({ contactId }) {
+    check(contactId, String);
+    ContactsCollection.update({ _id: contactId }, { $set: { archived: true } });
+  },
   'contacts.remove'({ contactId }) {
     check(contactId, String);
     ContactsCollection.remove(contactId);

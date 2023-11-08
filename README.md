@@ -80,3 +80,13 @@ So a subscription can be thought of as a set of data that changes over time. Typ
 
 Reference: [Data Loading](https://guide.meteor.com/data-loading.html)
 ---
+## DDP Specification
+
+- DDP is a protocol between a client & server that supports 2 operations: 
+  - Remote procedure calls by the client to the server (Methods).
+  - The client subscribing to a set of documents, and the server keeping the client informed about the contents of those documents as they change over time (Publications & Subscriptions).
+  - DDP messages are JSON objects, with some fields specified to be EJSON. 
+- EJSON is an extension of JSON to support more types. All EJSON serializations are also valid JSON.
+- JSON Valid Types: [String, Number, Object(JSON object), Array, Boolean, Null].
+- EJSON Valid Types: All JSON Valid Types + [Dates, Binary, Special numbers(NaN, Infinity, and -Infinity), Regular expressions, User-defined types *]
+- * We can use User-defined types in our publications, methods, and MiniMongo.
