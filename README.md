@@ -35,6 +35,7 @@
       ```
 8. Use Publications and Subscriptions
 9.  Use useFind and useSubscribe hooks
+10. You can use [randomuser](https://randomuser.me/) for testing
 ---
 ## Disable Quick Prototyping
 
